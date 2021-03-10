@@ -26,11 +26,11 @@ public class SmokingPatient extends Patient {
         Scanner objInt = new Scanner(System.in);
         Scanner objBoolean = new Scanner(System.in);
 
-        System.out.print("Years of smoking = ");
+        System.out.print("Years of smoking: ");
         int yearsOfSmoking = objInt.nextInt();
         this.yearsOfSmoking = yearsOfSmoking;
 
-        System.out.print("Heart diseases = ");
+        System.out.print("Heart diseases: ");
         Boolean heartDisease = objBoolean.nextBoolean();
         this.heartDiseases = heartDiseases;
     }
@@ -46,7 +46,7 @@ public class SmokingPatient extends Patient {
     public void show() {
         super.show();
 
-        System.out.println("Years of smoking = " + yearsOfSmoking);
-        System.out.println("Heart diseases = " + heartDiseases);
+        System.out.println("Years of smoking: " + yearsOfSmoking);
+        System.out.println("Heart diseases: " + heartDiseases);
     }
 }

@@ -6,7 +6,7 @@ public class Patient extends Person {
     private String lastControl;
     private boolean sick;
     private String city;
-    private String booking;
+    protected String booking;
 
     public Patient() {
 
@@ -34,19 +34,19 @@ public class Patient extends Person {
         Scanner objString = new Scanner(System.in);
         Scanner objBoolean = new Scanner(System.in);
 
-        System.out.print("Date of the last control = ");
+        System.out.print("Date of the last control: ");
         String lastControl = objString.nextLine();
         this.lastControl = lastControl;
 
-        System.out.print("Sick = ");
+        System.out.print("Sick: ");
         boolean sick = objBoolean.nextBoolean();
         this.sick = sick;
 
-        System.out.print("City = ");
+        System.out.print("City: ");
         String city = objString.nextLine();
         this.city = city;
 
-        System.out.print("Booking date = ");
+        System.out.print("Booking date: ");
         String booking = objString.nextLine();
         this.booking = booking;
     }
@@ -70,9 +70,9 @@ public class Patient extends Person {
     public void show() {
         super.show();
 
-        System.out.println("Date of the last control = " + lastControl);
-        System.out.println("Sick = " + sick);
-        System.out.println("City = " + city);
-        System.out.println("Booking date = " + booking);
+        System.out.println("Date of the last control: " + lastControl);
+        System.out.println("Sick: " + sick);
+        System.out.println("City: " + city);
+        System.out.println("Booking date: " + booking);
     }
 }

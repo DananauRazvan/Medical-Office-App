@@ -28,15 +28,15 @@ public class ChildPatient extends Patient {
 
         Scanner objString = new Scanner(System.in);
 
-        System.out.print("Father's first name = ");
+        System.out.print("Father's first name: ");
         String firstNameFather = objString.nextLine();
         this.firstNameFather = firstNameFather;
 
-        System.out.print("Mother's first name = ");
+        System.out.print("Mother's first name: ");
         String firstNameMother = objString.nextLine();
         this.firstNameMother = firstNameMother;
 
-        System.out.print("Child's school = ");
+        System.out.print("Child's school: ");
         String schoolName = objString.nextLine();
         this.schoolName = schoolName;
     }
@@ -56,8 +56,8 @@ public class ChildPatient extends Patient {
     public void show() {
         super.show();
 
-        System.out.println("Father's first name = " + firstNameFather);
-        System.out.println("Mother's first name = " + firstNameMother);
-        System.out.println("Child's school = " + schoolName);
+        System.out.println("Father's first name: " + firstNameFather);
+        System.out.println("Mother's first name: " + firstNameMother);
+        System.out.println("Child's school: " + schoolName);
     }
 }

@@ -18,6 +18,8 @@ public class MedicalOffice {
         System.out.println("3. Add a Patient");
         System.out.println("4. Add a Smoking Patient");
         System.out.println("5. Add a Child Patient");
+        System.out.println("6. Add a patient who require surgery");
+        System.out.println("7. Add an uninsured patient");
 
         System.out.print("Your answear = ");
         int x = obj.nextInt();
@@ -51,45 +53,55 @@ public class MedicalOffice {
                 arr.add(p);
                 bookings.put(((ChildPatient)(p)).fullName(), ((ChildPatient)(p)).getBooking());
                 break;
+            case 6:
+                p = new SurgeryPatient();
+                p.setter();
+                arr.add(p);
+                bookings.put(((SurgeryPatient)(p)).fullName(), ((SurgeryPatient)(p)).getBooking());
+            case 7:
+                p = new UninsuredPatient();
+                p.setter();
+                arr.add(p);
+                bookings.put(((UninsuredPatient)(p)).fullName(), ((UninsuredPatient)(p)).getBooking());
         }
     }
 
     public void databaseHP() {
-        System.out.println("The database of healthcare professionals : ");
+        System.out.println("The database of healthcare professionals:");
         for (var it : arr)
             if (it instanceof HealthcareProfessional)
                 it.show();
     }
 
     public void databaseP() {
-        System.out.println("The database of patients : ");
+        System.out.println("The database of patients:");
         for (var it : arr)
             if (it instanceof Patient)
                 it.show();
     }
 
     public void docSpecialization() {
-        System.out.println("Doctor's specializations : ");
+        System.out.println("Doctor's specializations:");
         for (var it : arr)
             if (it instanceof Doctor)
                 System.out.println(it.getFirstName() + " " + it.getLastName() + " " + ((Doctor) it).getSpecialization());
     }
 
     public void healthcareProfessionalsSalaries() {
-        System.out.println("Healthcare professionals's salaries : ");
+        System.out.println("Healthcare professionals's salaries:");
         for (var it : arr)
             if (it instanceof HealthcareProfessional)
                 System.out.print(it.getFirstName() + " " + it.getLastName() + ((HealthcareProfessional) it).getSalary());
     }
 
     public void healthcareProfessionals10YearsExp() {
-        System.out.println("Healthcare professionals with over 10 years experience :");
+        System.out.println("Healthcare professionals with over 10 years experience:");
         for (var it : arr)
             if (it instanceof HealthcareProfessional)
                 System.out.println(it.getFirstName() + " " + it.getLastName() + " " + ((HealthcareProfessional) it).getExperience());
     }
     public void sickPatients() {
-        System.out.println("Sick patients at last control :");
+        System.out.println("Sick patients at last control:");
         for(var it : arr)
             if (it instanceof Patient)
                 if (((Patient) it).getSick() == true)
@@ -97,7 +109,7 @@ public class MedicalOffice {
     }
 
     public void healthyPatients() {
-        System.out.println("Healty patients at last control :");
+        System.out.println("Healty patients at last control:");
         for (var it : arr)
             if(it instanceof Patient)
                 if (((Patient) it).getSick() == false)
@@ -105,7 +117,7 @@ public class MedicalOffice {
     }
 
     public void patientsBucharest() {
-        System.out.println("Patients from Bucharest :");
+        System.out.println("Patients from Bucharest:");
         for (var it : arr)
             if (it instanceof Patient)
                 if (((Patient) it).getCity() == "Bucharest")
@@ -113,7 +125,7 @@ public class MedicalOffice {
     }
 
     public void patientsNotFromBucharest() {
-        System.out.println("Patients who are not from Bucharest :");
+        System.out.println("Patients who are not from Bucharest:");
         for (var it : arr)
             if (it instanceof Patient)
                 if (((Patient) it).getCity() != "Bucharest")
@@ -121,7 +133,7 @@ public class MedicalOffice {
     }
 
     public void malePatients() {
-        System.out.println("Male patients :");
+        System.out.println("Male patients:");
         for (var it : arr)
             if(it instanceof Patient)
                 if (it.getGender() == "Male")
@@ -129,7 +141,7 @@ public class MedicalOffice {
     }
 
     public void femalePatients() {
-        System.out.println("Female patients :");
+        System.out.println("Female patients:");
         for (var it : arr)
             if(it instanceof Patient)
                 if (it.getGender() == "Female")
@@ -137,7 +149,7 @@ public class MedicalOffice {
     }
 
     public void smokingPatientsDiseases() {
-        System.out.println("Smoking patients with heart diseases");
+        System.out.println("Smoking patients with heart diseases:");
         for (var it : arr)
             if (it instanceof SmokingPatient)
                 if (((SmokingPatient) it).getHeartDiseases() == true)
@@ -145,23 +157,37 @@ public class MedicalOffice {
     }
 
     public void namesChildPatients() {
-        System.out.println("The names of the child patients :");
+        System.out.println("The names of the child patients:");
         for (var it : arr)
             if (it instanceof ChildPatient)
                 System.out.println(it.getFirstName() + " " + it.getLastName() + " " + it.getAge());
     }
 
     public void parentsNamesChildPatients() {
-        System.out.println("The parents name's of a child patient");
+        System.out.println("The parents name's of a child patient:");
         for (var it : arr)
             if (it instanceof ChildPatient)
                 System.out.println(it.getFirstName() + " " + it.getLastName() + " - " + ((ChildPatient) it).getFirstNameFather() + ", " + ((ChildPatient) it).getFirstNameMother());
     }
 
     public void patientsLastControl() {
-        System.out.println("Patients's last control :");
+        System.out.println("Patients's last control:");
         for (var it : arr)
             if (it instanceof Patient)
                 System.out.println(it.getFirstName() + " " + it.getLastName() + " " + it.getAge());
+    }
+
+    public void patientsRequiringSurgery() {
+        System.out.println("Patients who requires surgery:");
+        for (var it : arr)
+            if (it instanceof SurgeryPatient)
+                System.out.println(it.getFirstName() + " " + it.getLastName() + " " + it.getAge());
+    }
+
+    public void uninsuredPatientsMonthyPayments() {
+        System.out.println("The Uninsured patients's monthly payments and ending date:");
+        for (var it : arr)
+            if (it instanceof UninsuredPatient)
+                System.out.println(it.getFirstName() + " " + it.getLastName() + " " + ((UninsuredPatient) it).monthlyPayments() + " " + ((UninsuredPatient) it).paymentsCompletionDate());
     }
 }

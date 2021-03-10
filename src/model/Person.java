@@ -2,7 +2,7 @@ package model;
 
 import java.util.Scanner;
 
-public class Person {
+public abstract class Person {
     private static int id = 0;
     private String firstName;
     private String lastName;
@@ -14,6 +14,7 @@ public class Person {
     public Person() {
 
     }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -44,27 +45,27 @@ public class Person {
 
         id++;
 
-        System.out.print("First name = ");
+        System.out.print("First name: ");
         String firstName = objString.nextLine();
         this.firstName = firstName;
 
-        System.out.print("Last name = ");
+        System.out.print("Last name: ");
         String lastName = objString.nextLine();
         this.lastName = lastName;
 
-        System.out.print("Age = ");
+        System.out.print("Age: ");
         int age = objInt.nextInt();
         this.age = age;
 
-        System.out.print("Gender = ");
+        System.out.print("Gender: ");
         String gender = objString.nextLine();
         this.gender = gender;
 
-        System.out.print("Phone number = ");
+        System.out.print("Phone number: ");
         String phoneNumber  = objString.nextLine();
         this.phoneNumber = phoneNumber;
 
-        System.out.print("Address = ");
+        System.out.print("Address: ");
         String address = objString.nextLine();
         this.address = address;
     }
@@ -94,13 +95,13 @@ public class Person {
     }
 
     public void show() {
-        System.out.println("Id = " + id);
-        System.out.println("First name = " + firstName);
-        System.out.println("Last name = " + lastName);
-        System.out.println("Gender = " + gender);
-        System.out.println("Age = " + age);
-        System.out.println("Address = " + address);
-        System.out.println("Phone number = " + phoneNumber);
+        System.out.println("Id: " + id);
+        System.out.println("First name: " + firstName);
+        System.out.println("Last name: " + lastName);
+        System.out.println("Gender: " + gender);
+        System.out.println("Age: " + age);
+        System.out.println("Address: " + address);
+        System.out.println("Phone number: " + phoneNumber);
     }
 
     public String fullName() {

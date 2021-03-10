@@ -20,7 +20,7 @@ public class MedicalAssistant extends HealthcareProfessional {
 
         Scanner objInt = new Scanner(System.in);
 
-        System.out.print("Number of patients = ");
+        System.out.print("Number of patients: ");
         int noPatients = objInt.nextInt();
         this.noPatients = noPatients;
     }
@@ -32,6 +32,6 @@ public class MedicalAssistant extends HealthcareProfessional {
     public void show() {
         super.show();
 
-        System.out.println("Number of patients = " + noPatients);
+        System.out.println("Number of patients: " + noPatients);
     }
 }

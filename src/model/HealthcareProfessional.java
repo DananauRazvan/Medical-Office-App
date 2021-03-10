@@ -2,7 +2,7 @@ package model;
 
 import java.util.Scanner;
 
-public class HealthcareProfessional extends Person {
+public abstract class HealthcareProfessional extends Person {
     private int experience;
     private int startYear;
     private float salary;
@@ -35,19 +35,19 @@ public class HealthcareProfessional extends Person {
         Scanner objFloat = new Scanner(System.in);
         Scanner objString = new Scanner(System.in);
 
-        System.out.print("Experience = ");
+        System.out.print("Experience: ");
         int experience = objInt.nextInt();
         this.experience = experience;
 
-        System.out.print("Start year = ");
+        System.out.print("Start year: ");
         int startYear = objInt.nextInt();
         this.startYear = startYear;
 
-        System.out.print("Salary = ");
+        System.out.print("Salary: ");
         float salary = objFloat.nextFloat();
         this.salary = salary;
 
-        System.out.print("Medical office name = ");
+        System.out.print("Medical office name: ");
         String medicalOfficeName = objString.nextLine();
         this.medicalOfficeName = medicalOfficeName;
     }
@@ -71,9 +71,9 @@ public class HealthcareProfessional extends Person {
     public void show(){
         super.show();
 
-        System.out.println("Experience = " + experience);
-        System.out.println("Starting year = " + startYear);
-        System.out.println("Salary = " + salary);
-        System.out.println("Medical office name = " + medicalOfficeName);
+        System.out.println("Experience: " + experience);
+        System.out.println("Starting year: " + startYear);
+        System.out.println("Salary: " + salary);
+        System.out.println("Medical office name: " + medicalOfficeName);
     }
 }

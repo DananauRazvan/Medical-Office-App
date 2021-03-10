@@ -27,10 +27,12 @@ public class Main {
             System.out.println("14. The names of the child patients");
             System.out.println("15. The parents name's of a child patient");
             System.out.println("16. Patients's last control");
-            System.out.println("17. Exit");
+            System.out.println("17. Patients who requires surgery");
+            System.out.println("18. The uninsured patients monthly payments and ending date");
+            System.out.println("19. Exit");
 
             System.out.println();
-            System.out.print("Your option = ");
+            System.out.print("Your option: ");
             Scanner obj = new Scanner(System.in);
             opt = obj.nextInt();
 
@@ -83,8 +85,14 @@ public class Main {
                 case 16:
                     X.patientsLastControl();
                     break;
+                case 17:
+                    X.patientsRequiringSurgery();
+                    break;
+                case 18:
+                    X.uninsuredPatientsMonthyPayments();
+                    break;
             }
 
-        } while(opt != 17);
+        } while(opt != 19);
     }
 }
